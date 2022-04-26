@@ -91,7 +91,7 @@ class QGPipeline:
         answers = [item.split('<sep>') for item in dec]
         answers = [i[:-1] for i in answers]
         
-        return sents, answers
+        return [x.lower() for x in sents], [[y.lower() for y in x] for x in answers]
     
     def _tokenize(self,
         inputs,
